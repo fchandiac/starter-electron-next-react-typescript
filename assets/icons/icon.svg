@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="850px" height="850px" viewBox="0 0 850 850" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_svg_svg</title>
+    <defs>
+        <radialGradient cx="7.45761712%" cy="68.8922977%" fx="7.45761712%" fy="68.8922977%" r="98.5420107%" id="radialGradient-1">
+            <stop stop-color="#8DB3A1" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="86.1154486%" y1="11.6381891%" x2="39.8547166%" y2="68.5548041%" id="linearGradient-2">
+            <stop stop-color="#8DB3A1" offset="0%"></stop>
+            <stop stop-color="#1E292E" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon_svg" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LogoAyG_svgsvg2" fill="url(#radialGradient-1)" fill-rule="nonzero">
+            <path d="M425,0 C659.721019,0 850,190.278981 850,425 C850,659.721019 659.721019,850 425,850 C190.278981,850 0,659.721019 0,425 C0,190.278981 190.278981,0 425,0 Z M425,50 C217.893219,50 50,217.893219 50,425 C50,632.106781 217.893219,800 425,800 C632.106781,800 800,632.106781 800,425 C800,217.893219 632.106781,50 425,50 Z" id="Trazado-2"></path>
+        </g>
+        <circle id="Óvalo" fill="url(#linearGradient-2)" cx="425" cy="425" r="300"></circle>
+    </g>
+</svg>

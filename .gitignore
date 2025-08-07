@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Electron
+/dist/
+/out/
+*.app
+*.exe
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.tar.gz
+*.zip
+
+# Electron build output
+/release/
+/app/dist/
+/packages/
+
+# Platform specific
+.DS_Store
+Thumbs.db
