@@ -1,10 +1,31 @@
-import { createTheme } from '@mui/material/styles';
+import { ThemeOptions } from '@mui/material/styles';
 
-const theme = createTheme({
+export const themeOptions: ThemeOptions = {
   palette: {
-    primary: { main: '#1976d2' },
-    secondary: { main: '#dc004e' },
+    mode: 'light',
+    primary: {
+      main: '#0E1214',
+    },
+    secondary: {
+      main: '#D95F00',
+    },
+    background: {
+      default: '#FFFFFF',
+      paper: '#FFFFFF',
+    },
+    divider: '#1A1A1A',
+    error: {
+      main: '#D32F2F',
+    },
+    warning: {
+      main: '#FFA000',
+    },
+    info: {
+      main: '#1976D2',
+    },
+    success: {
+      main: '#388E3C',
+    },
   },
-});
-
-export default theme;
+  
+};

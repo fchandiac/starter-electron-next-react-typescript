@@ -37,15 +37,17 @@
       position: relative;
     }
 
-    .left::before {
-      content: "© 2025";
-      position: absolute;
-      top: 10px;
-      left: 10px;
+
+    .copyright {
+      position: fixed;
+      right: 20px;
+      bottom: 24px;
       color: white;
-      font-size: 11px;
+      font-size: 12px;
       opacity: 0.8;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+      z-index: 100;
+      pointer-events: none;
     }
 
     .right {
@@ -95,9 +97,9 @@
   </style>
 </head>
 <body>
+
   <div class="splash">
-    <div class="left">
-    </div>
+    <div class="left"></div>
     <div class="right">
       <div>
         <div class="app-name">AppName</div>
@@ -110,6 +112,7 @@
       </div>
     </div>
   </div>
+  <div class="copyright">© 2025</div>
 
   <script>
     // Electron controlará completamente la transición
