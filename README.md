@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# AppName
 
-First, run the development server:
+> Aplicación de escritorio profesional multiplataforma construida con Electron, Next.js, React y TypeScript.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Características principales
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Splash screen** personalizado y elegante.
+- **Login seguro** con autenticación de usuarios y admins (NextAuth, bcryptjs, SQLite).
+- **UI moderna** con Material-UI (MUI) y tema personalizado.
+- **Sistema global de alertas** vía Context API.
+- **Menú nativo** personalizado con nombre de la app y diálogo "Acerca de..." con icono e info de la app.
+- **Empaquetado multiplataforma** listo para macOS (.dmg) y Windows (.exe) usando electron-builder.
+- **Soporte para iconos de app** en todas las plataformas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tecnologías
 
-## Learn More
+- Electron 37+
+- Next.js 15+
+- React 19+
+- TypeScript 5+
+- Material-UI 7+
+- electron-builder
+- SQLite3
 
-To learn more about Next.js, take a look at the following resources:
+## Estructura del proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/main.ts` — Proceso principal de Electron, splash, menú, empaquetado.
+- `/preload.ts` — Preload para comunicación segura.
+- `/app/` — App Next.js (páginas, contexto, tema MUI, API auth).
+- `/assets/` — Splash, iconos, imágenes.
+- `/lib/db.ts` — Configuración y acceso a la base de datos SQLite.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts principales
 
-## Deploy on Vercel
+- `npm run dev` — Desarrollo (Next.js + Electron).
+- `npm run build` — Build Next.js + Electron.
+- `npm run build:mac` — Empaquetar para macOS (.dmg).
+- `npm run build:win` — Empaquetar para Windows (.exe).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Empaquetado y distribución
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El empaquetado usa electron-builder y toma el nombre de la app desde `productName` en `package.json`.
+
+1. Instala dependencias:
+   ```bash
+   npm install
+   ```
+2. Para desarrollo:
+   ```bash
+   npm run dev
+   ```
+3. Para empaquetar:
+   ```bash
+   npm run build:mac   # macOS
+   npm run build:win   # Windows
+   ```
+
+Los instaladores se generan en la carpeta `dist/`.
+
+---
+Desarrollado por Felipe Chandía Castillo — 2025
