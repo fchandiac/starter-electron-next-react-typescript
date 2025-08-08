@@ -1,4 +1,5 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Menu, dialog } from 'electron';
+import fs from 'fs';
 import path from 'path';
 
 // Configurar el icono de la aplicación según la plataforma
@@ -185,12 +186,54 @@ async function createWindows() {
   }, 3500); // 3.5 segundos después de que Next.js esté listo (1.5s + 2s adicionales)
 }
 
+
+// Leer info de package.json
+const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf8'));
+const appName = pkg.productName || pkg.name || 'AppName';
+const appVersion = pkg.version || '';
+const appAuthor = (pkg.author && (typeof pkg.author === 'string' ? pkg.author : pkg.author.name)) || '';
+const appCopyright = pkg.copyright || '';
+const appIcon = path.join(__dirname, '..', 'assets', 'icons', 'icon-256x256.png');
+
+const customMenu = Menu.buildFromTemplate([
+  {
+    label: appName,
+    submenu: [
+      {
+        label: 'Acerca de...'
+        ,click: () => {
+          dialog.showMessageBox({
+            title: `Acerca de ${appName}`,
+            message: `${appName} v${appVersion}`,
+            detail: `${appAuthor}\n${appCopyright}`,
+            icon: appIcon
+          });
+        }
+      },
+      { type: 'separator' },
+      { role: 'quit', label: 'Salir' }
+    ]
+  },
+  {
+    label: 'Edición',
+    submenu: [
+      { role: 'undo', label: 'Deshacer' },
+      { role: 'redo', label: 'Rehacer' },
+      { type: 'separator' },
+      { role: 'cut', label: 'Cortar' },
+      { role: 'copy', label: 'Copiar' },
+      { role: 'paste', label: 'Pegar' },
+      { role: 'selectAll', label: 'Seleccionar todo' }
+    ]
+  }
+]);
+Menu.setApplicationMenu(customMenu);
+
 app.whenReady().then(() => {
   // Configurar el icono de la aplicación en el dock/taskbar
   if (process.platform === 'darwin' && app.dock) {
     // En macOS, establecer el icono del dock
     app.dock.setIcon(getAppIcon());
   }
-  
   createWindows();
 });

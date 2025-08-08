@@ -1,5 +1,6 @@
 {
   "name": "starter-electron-next-react-typescript",
+  "productName": "AppName",
   "version": "0.1.0",
   "private": true,
   "main": "main.ts",
@@ -9,6 +10,8 @@
     "dev": "concurrently \"npm run dev:next\" \"npm run dev:electron\"",
     "build:electron": "tsc -p tsconfig.json",
     "build": "next build && npm run build:electron",
+    "build:mac": "electron-builder --mac --config electron-builder.json",
+    "build:win": "electron-builder --win --config electron-builder.json",
     "start": "next start"
   },
   "dependencies": {
@@ -34,6 +37,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/sqlite3": "^3.1.11",
+    "electron-builder": "^26.0.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }

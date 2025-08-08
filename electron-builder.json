@@ -1,0 +1,28 @@
+{
+  "appId": "com.fchandiac.starter-electron-next-react-typescript",
+  "productName": "Starter Electron Next React TS",
+  "copyright": "Copyright © 2025 fchandiac",
+  "files": [
+    "dist/**/*",
+    "assets/**/*",
+    "app/**/*",
+    "main.js",
+    "preload.js",
+    "package.json"
+  ],
+  "directories": {
+    "buildResources": "assets/icons"
+  },
+  "mac": {
+    "category": "public.app-category.productivity",
+    "target": ["dmg", "zip"]
+  },
+  "win": {
+    "target": ["nsis", "zip"]
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}
