@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
   Box,
   TextField,
@@ -123,7 +125,7 @@ export default function LoginForm({ onLogin, onRegister, loading = false }: Logi
                       onClick={togglePasswordVisibility}
                       edge="end"
                     >
-                      {showPassword ? '👁️' : '🙈'}
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 ),
@@ -140,16 +142,7 @@ export default function LoginForm({ onLogin, onRegister, loading = false }: Logi
               {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
             </Button>
 
-            <Box sx={{ textAlign: 'center' }}>
-              <Button
-                variant="text"
-                onClick={onRegister}
-                disabled={loading}
-                sx={{ textTransform: 'none' }}
-              >
-                ¿No tienes cuenta? Regístrate aquí
-              </Button>
-            </Box>
+
           </Box>
         </Paper>
       </Box>
