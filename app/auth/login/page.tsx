@@ -1,11 +1,11 @@
 'use client';
 
 import { LoginForm } from '../../../components';
-import { useAlertContext } from '../../../context';
+// import eliminado: useAlertContext
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
-  const { showAlert } = useAlertContext();
+  // showAlert eliminado, no se usa AlertContext
   const router = useRouter();
 
   const handleLogin = async (email: string, password: string) => {
@@ -22,18 +22,18 @@ export default function LoginPage() {
 
       if (!response.ok) {
         // Mostrar error específico de la API
-        showAlert(data.error || 'Error al iniciar sesión', 'error');
+  // Mostrar error específico de la API (alerta eliminada)
         return;
       }
 
       // Verificar que el usuario sea admin
       if (data.user.role !== 'admin') {
-        showAlert('Acceso denegado. Solo los administradores pueden acceder.', 'error');
+  // Acceso denegado. Solo los administradores pueden acceder. (alerta eliminada)
         return;
       }
 
       // Login exitoso para admin
-      showAlert(`¡Bienvenido ${data.user.name}! Login exitoso.`, 'success');
+  // ¡Bienvenido! Login exitoso. (alerta eliminada)
       
       // Redireccionar a la página de admin después de un breve delay
       setTimeout(() => {
@@ -42,18 +42,16 @@ export default function LoginPage() {
 
     } catch (error) {
       console.error('Error durante el login:', error);
-      showAlert('Error de conexión. Verifica tu conexión a internet.', 'error');
+  // Error de conexión. Verifica tu conexión a internet. (alerta eliminada)
     }
   };
 
   const handleRegister = () => {
-    showAlert('Función de registro próximamente', 'info');
+  // Función de registro próximamente (alerta eliminada)
   };
-
   return (
-    <LoginForm 
-      onLogin={handleLogin}
-      onRegister={handleRegister}
-    />
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+      <LoginForm />
+    </div>
   );
 }

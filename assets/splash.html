@@ -93,6 +93,10 @@
 
     .fade-out {
       opacity: 0;
+      transform: scale(0.96);
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s, border-radius 0.5s;
     }
   </style>
 </head>
@@ -115,7 +119,15 @@
   <div class="copyright">© 2025</div>
 
   <script>
-    // Electron controlará completamente la transición
+    // Función para hacer fade out de todos los elementos del splash
+    function fadeOutSplash() {
+      document.querySelector('.splash').classList.add('fade-out');
+      document.querySelector('.copyright').classList.add('fade-out');
+    }
+
+    // Ejemplo: fade out después de 1.5 segundos (puedes controlar esto desde Electron)
+  setTimeout(fadeOutSplash, 2500);
+    // Si usas Electron, puedes llamar fadeOutSplash() desde el preload/main
     console.log('🎬 Splash CasaMia cargado y listo');
   </script>
 </body>

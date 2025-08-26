@@ -1,1 +1,1 @@
-export { AlertProvider, AlertContext, useAlertContext } from './AlertContext';
+// AlertContext eliminado temporalmente. No se exporta nada.
