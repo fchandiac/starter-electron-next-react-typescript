@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import ClientLayout from "../components/ClientLayout";
+import ClientLayout from "./components/ClientLayout";
+import { LogoProvider } from "./context/LogoContext";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Starter-Electron-Next-React-Typescript",
@@ -14,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+        <LogoProvider>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </LogoProvider>
       </body>
     </html>
   );

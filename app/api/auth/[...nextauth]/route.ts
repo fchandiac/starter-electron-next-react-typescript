@@ -5,6 +5,18 @@ import { initDb } from "../../../../lib/db";
 import { compare } from "bcryptjs";
 
 export const authOptions: NextAuthOptions = {
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        Object.assign(token, user);
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user = token as any;
+      return session;
+    }
+  },
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -16,7 +28,8 @@ export const authOptions: NextAuthOptions = {
         const db = await initDb();
         const user = await db.get("SELECT * FROM users WHERE username = ?", credentials?.username);
         if (user && credentials?.password && await compare(credentials.password, user.password)) {
-          return { id: user.id, name: user.name, username: user.username };
+          // Retornar todos los campos del usuario
+          return user;
         }
         return null;
       }

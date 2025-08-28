@@ -1,6 +1,6 @@
 'use client';
 
-import { LoginForm } from '../../../components';
+import { LoginForm } from '../../components';
 // import eliminado: useAlertContext
 import { useRouter } from 'next/navigation';
 

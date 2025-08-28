@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useRef } from "react";
-import { IconButton } from "@/components/Button/IconButton";
+import { IconButton } from "@/app/components/Button/IconButton";
 
 export interface Option {
   id: number;

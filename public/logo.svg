@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="850px" height="850px" viewBox="0 0 850 850" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo_svg</title>
+    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LogoAyG_svgsvg2" fill="#C5D3DB" fill-rule="nonzero">
+            <path d="M425,0 C659.721019,0 850,190.278981 850,425 C850,659.721019 659.721019,850 425,850 C190.278981,850 0,659.721019 0,425 C0,190.278981 190.278981,0 425,0 Z M425,50 C217.893219,50 50,217.893219 50,425 C50,632.106781 217.893219,800 425,800 C632.106781,800 800,632.106781 800,425 C800,217.893219 632.106781,50 425,50 Z" id="Trazado-2"></path>
+        </g>
+        <circle id="Óvalo" fill="#C5D3DB" cx="425" cy="425" r="300"></circle>
+    </g>
+</svg>

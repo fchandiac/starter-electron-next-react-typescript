@@ -162,7 +162,7 @@ async function createWindows() {
     setTimeout(() => {
       splash.close();
       
-      // Esperar 500ms antes de mostrar la ventana principal (pausa entre ventanas)
+      // Esperar 100ms antes de mostrar la ventana principal (pausa entre ventanas)
       setTimeout(() => {
         mainWin.show();
         mainWin.focus();
@@ -170,16 +170,16 @@ async function createWindows() {
         // Efecto fade-in más lento de la ventana principal
         let opacity = 0;
         const fadeIn = setInterval(() => {
-          opacity += 0.025; // Reducido de 0.05 a 0.025 para hacerlo más lento
+          opacity += 0.0333; // Ajustado para 1.5s total (1/0.0333*50ms ≈ 1.5s)
           mainWin.setOpacity(opacity);
           
           if (opacity >= 1) {
             clearInterval(fadeIn);
             mainWin.setOpacity(1); // Asegurar que esté completamente visible
           }
-        }, 50); // Aumentado de 30ms a 50ms = ~2 segundos total de fade-in
+        }, 50); // 1.5 segundos total de fade-in
         
-      }, 500); // Pausa de 500ms entre el cierre del splash y la aparición de la ventana principal
+  }, 300); // Pausa de 30ms entre el cierre del splash y la aparición de la ventana principal
       
     }, 1500); // Esperar 1.5s para que termine la animación CSS fade-out
     
